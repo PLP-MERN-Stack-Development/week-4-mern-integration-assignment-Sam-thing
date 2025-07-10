@@ -28,7 +28,7 @@ export default function Login() {
       <div className="bg-white rounded-2xl shadow-2xl p-10 w-full max-w-md border border-gray-300 transition-all duration-300">
         <form onSubmit={handleSubmit}>
           <h2 className="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow">
-            Login
+            Log-in
           </h2>
           <input
             type="email"

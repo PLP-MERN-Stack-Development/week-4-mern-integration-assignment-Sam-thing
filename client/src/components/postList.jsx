@@ -19,11 +19,7 @@ export default function PostList({ posts }) {
           {post.featuredImage && (
             <div className="w-full flex justify-center mb-3">
               <img
-                src={
-                  post.featuredImage.startsWith("/uploads")
-                    ? post.featuredImage
-                    : `/uploads/${post.featuredImage}`
-                }
+                src={`http://localhost:5000/uploads/${post.featuredImage}`}
                 alt={post.title}
                 className="rounded shadow max-h-48 object-cover"
               />

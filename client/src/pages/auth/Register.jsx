@@ -23,17 +23,19 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
-      <div className="bg-white p-8 shadow-md rounded w-full max-w-sm text-center">
-        <h2 className="text-3xl font-bold mb-6 text-blue-700">Create Account</h2>
-        <form onSubmit={handleSubmit} className="space-y-4 text-left">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
+      <div className="bg-white rounded-2xl shadow-2xl p-10 w-full max-w-md border border-gray-300 transition-all duration-300">
+        <form onSubmit={handleSubmit}>
+          <h2 className="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow">
+            Sign-up
+          </h2>
           <input
             type="text"
             name="username"
             placeholder="Enter your username"
             value={formData.username}
             onChange={handleChange}
-            className="w-full border px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-4 py-3 rounded mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
           <input
@@ -42,7 +44,7 @@ export default function Register() {
             placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full border px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-4 py-3 rounded mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
           <input
@@ -51,22 +53,26 @@ export default function Register() {
             placeholder="Enter your password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full border px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-4 py-3 rounded mb-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
-          <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition duration-200 shadow"
+          >
             Register
           </button>
+          <p className="text-center text-sm text-gray-600 mt-6">{message}</p>
+          <p className="text-center text-sm mt-4">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="text-blue-600 underline hover:text-blue-800 font-semibold"
+            >
+              Login
+            </Link>
+          </p>
         </form>
-
-        <p className="text-sm mt-4 text-gray-600">
-          Already have an account?{" "}
-          <Link to="/login" className="text-blue-600 underline hover:text-blue-800 font-semibold">
-            Login
-          </Link>
-        </p>
-
-        {message && <p className="mt-4 text-sm font-medium text-gray-700">{message}</p>}
       </div>
     </div>
   );
